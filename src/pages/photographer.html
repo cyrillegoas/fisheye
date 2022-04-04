@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    
+    <title>Fisheye</title>
+    <script type="module" crossorigin src="/fisheye/assets/main.7bc69d76.js"></script>
+    <link rel="stylesheet" href="/fisheye/assets/main.713717f1.css">
+  </head>
+  <body>
+    <header class="header">
+      <a
+        class="header__link"
+        href="../../index.html"
+        aria-label="link to home page"
+        ><img
+          class="header__logo"
+          src="../../assets/logo/logo.png"
+          alt="Fisheye Home page"
+      /></a>
+    </header>
+    <main>
+      <div class="info-wrapper">
+        <section class="photographer-info">
+          <div
+            class="contact-modal"
+            role="dialog"
+            aria-hidden="true"
+            aria-labelledby="formTitle"
+            hidden="true"
+            tabindex="-1"
+          >
+            <form class="contact-modal__form" action="#">
+              <div class="contact-modal__header">
+                <h1 id="formTitle" class="contact-modal__title"></h1>
+                <button
+                  type="button"
+                  class="contact-modal__close"
+                  aria-label="close contact form"
+                >
+                  <img src="../../assets/utils/close.svg" alt="close button" />
+                </button>
+              </div>
+              <label class="contact-modal__label" for="firstname">Prénom</label>
+              <input
+                class="contact-modal__input"
+                type="text"
+                name="firstname"
+                id="firstname"
+              />
+              <label class="contact-modal__label" for="lastname">Nom</label>
+              <input
+                class="contact-modal__input"
+                type="text"
+                name="lastname"
+                id="lastname"
+              />
+              <label class="contact-modal__label" for="email">Email</label>
+              <input
+                class="contact-modal__input"
+                type="email"
+                name="email"
+                id="email"
+              />
+              <label class="contact-modal__label" for="message"
+                >Votre message</label
+              >
+              <textarea
+                class="contact-modal__message"
+                id="message"
+                name="message"
+              ></textarea>
+              <button class="btn" aria-label="send message">Envoyer</button>
+            </form>
+          </div>
+        </section>
+      </div>
+      <div class="gallery-wrapper">
+        <section class="gallery">
+          <div class="filter">
+            <label
+              id="filter-label"
+              class="filter__label"
+              for="listbox-control"
+            >
+              Trier par
+            </label>
+            <div class="filter__select">
+              <button
+                class="filter__btn"
+                tabindex="0"
+                aria-haspopup="listbox"
+                id="listbox-control"
+              >
+                <div class="filter__control-wrapper">
+                  Popularité
+                  <img
+                    class="filter__arrow"
+                    src="../../assets/utils/arrow.svg"
+                    alt=""
+                  />
+                </div>
+              </button>
+              <ul
+                class="filter__dropdown"
+                role="listbox"
+                aria-labelledby="filter-label"
+                tabindex="0"
+                hidden
+              >
+                <li
+                  id="popularité"
+                  class="filter__option-wrapper"
+                  role="option"
+                >
+                  Popularité
+                </li>
+                <li id="date" class="filter__option-wrapper" role="option">
+                  Date
+                </li>
+                <li id="titre" class="filter__option-wrapper" role="option">
+                  Titre
+                </li>
+              </ul>
+            </div>
+          </div>
+          <ul class="gallery__cards"></ul>
+          <div class="like-counter">
+            <span class="like-counter__total"></span>
+            <img
+              class="like-counter__total-icon"
+              src="../../assets/utils/heart.svg"
+              alt=""
+            />
+            <span class="like-counter__rate">300€ / jour</span>
+          </div>
+          <div
+            class="lightbox-modal"
+            role="dialog"
+            aria-hidden="true"
+            hidden="true"
+            aria-label="image closeup view"
+            tabindex="-1"
+          >
+            <div class="lightbox-modal__inner">
+              <div class="lightbox-modal__prev-btn-wrapper">
+                <button
+                  class="lightbox-modal__prev-btn"
+                  aria-label="previous image"
+                >
+                  <svg
+                    viewBox="0 0 30 48"
+                    width="30"
+                    height="48"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M29.64 42.36 11.32 24 29.64 5.64 24 0 0 24l24 24 5.64-5.64Z"
+                      fill="#911C1C"
+                    />
+                  </svg>
+                </button>
+              </div>
+              <div class="lightbox-modal__content-wrapper"></div>
+              <div class="lightbox-modal__next-btn-wrapper">
+                <button
+                  class="lightbox-modal__close-btn"
+                  aria-label="close dialog"
+                >
+                  <svg
+                    viewBox="0 0 42 42"
+                    width="42"
+                    height="42"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M42 4.23 37.77 0 21 16.77 4.23 0 0 4.23 16.77 21 0 37.77 4.23 42 21 25.23 37.77 42 42 37.77 25.23 21 42 4.23Z"
+                      fill="#911C1C"
+                    />
+                  </svg>
+                </button>
+                <button
+                  class="lightbox-modal__next-btn"
+                  aria-label="next image"
+                >
+                  <svg
+                    viewBox="0 0 30 48"
+                    width="30"
+                    height="48"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M.36 5.64 18.68 24 .36 42.36 6 48l24-24L6 0 .36 5.64Z"
+                      fill="#911C1C"
+                    />
+                  </svg>
+                </button>
+              </div>
+              <h2 class="lightbox-modal__title"></h2>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+    
+  </body>
+</html>
